@@ -7,22 +7,8 @@
   <title>Ehdota tarinan osia | Juonigeneraattori v2 – Luo tarinaasi juonen</title>
 
     <meta name="description" content="Täällä pystyt ehdottamaan uusia adjektiiveja, päähenkilöitä ja niiden kuvailuja, tärkeitä osia, tapahtumapaikkoja sekä bonustehtäviäkin!">
-
-    <meta property="og:title" content="Ehdota tarinan osia | Juonigeneraattori v2 – Luo tarinaasi juonen">
-
-    <meta property="og:site_name" content="Juonigeneraattori v2">
-
-    <meta property="og:url" content="https://www.juonigeneraattori.com/ehdota/">
-
-    <meta property="og:description" content="Täällä pystyt ehdottamaan uusia adjektiiveja, päähenkilöitä ja niiden kuvailuja, tärkeitä osia, tapahtumapaikkoja sekä bonustehtäviäkin!">
-
-    <meta property="og:image" content="https://www.juonigeneraattori.com/images/square-v2.jpg">
-
-    <meta property="og:type" content="website">
-
-    <meta property="og:locale" content="fi-FI">
-
-	<link rel="icon" href="/favicon/juonig/favicon.ico" type="image/x-icon">
+	
+		<link rel="icon" href="https://www.juonigeneraattori.com/favicon/juonig/favicon.ico" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,7 +16,7 @@
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-    <link rel="apple-touch-icon" href="/favicon/juonig/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="https://www.juonigeneraattori.com//favicon/juonig/apple-touch-icon.png">
 
 	<meta name="theme-color" content="#7B68EE">
 	<!--↑↑↑ Chrome, Firefox OS & Opera ↑↑↑-->
