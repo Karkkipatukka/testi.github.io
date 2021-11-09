@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+
+<head>
+
+    <title>Juonigeneraattori v2 – Luo tarinaasi juonen</title>
+
+    <meta name="description" content="Juonigeneraattori v2 luo täysin satunnaisen ja (yleensä) myös hauskan juonen. Erilaisia juonia on tällä hetkellä 165 521 655 936 kappaletta.">
+    
+    <link rel="icon" href="https://www.juonigeneraattori.com/favicon/juonig/favicon.ico" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <link rel="apple-touch-icon" href="favicon/juonig/apple-touch-icon.png">
+
+	<meta name="theme-color" content="#7B68EE">
+	<!--↑↑↑ Chrome, Firefox OS & Opera ↑↑↑-->
+
+	<meta name="msapplication-navbutton-color" content="#7B68EE">
+    <!--↑↑↑ Windows ↑↑↑-->
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!--↑↑↑ iOS Safari ↑↑↑-->
+
+    <meta name="keywords" content="Juonigeneraattori, Juonigeneraattori v2, juoni, generaattori, tarina, tarinan juoni">
+
+    <style>
+
+    	body {
+    	    margin: 0px;
+			background-color: MediumSlateBlue;
+			text-align: center;
+		}
+
+		a:link {
+		    color: MediumSlateBlue;
+			background-color: transparent;
+			text-decoration: none;
+			}
+
+		a:visited {
+			color: DarkViolet;
+			background-color: transparent;
+		    text-decoration: none;
+			}
+
+		a:hover {
+			color: DodgerBlue;
+			background-color: transparent;
+			text-decoration: underline;
+			}
+
+		a:active {
+			color: SlateBlue;
+		    background-color: transparent;
+			text-decoration: underline;
+			}
+
+		a, span {
+            font-weight: 700;
+            }
+
+		h1, h2, h3 {
+		    text-align: center;
+	        margin-bottom: 0px;
+			}
+
+        p {
+            text-align: justify;
+        }
+
+        label {
+            display: block;
+            text-align: center;
+            color: White;
+            font-size: 25px;
+            font-weight: 700;
+            margin-top: 60px;
+        }
+
+        select {
+            display: block;
+            margin: 10px auto 30px;
+            padding: 10px 20px;
+            font-size: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0px;
+        }
+
+        ul li:before {
+            content: "\2605\00A0\00A0";
+            margin-left: 1.2em;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0px;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: -3px;
+            background-color: Black;
+            overflow-x: hidden;
+            transition: 0.6s ease;
+            padding-top: 60px;
+            border: 3px solid White;
+            border-style: none solid none none;
+        }
+
+        .sidenav a {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            padding: 8px 10px;
+            text-decoration: none;
+            font-size: 25px;
+            color: DarkGrey;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: White;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 50px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+
+        #openflexbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            top: 0;
+            position: sticky;
+            position: -webkit-sticky;
+            color: White;
+            background-color: Black;
+            border: 3px solid White;
+            border-style: none none solid none;
+            z-index: 1000;
+        }
+
+        #open {
+            font-size: 50px;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            margin: 0px;
+        }
+
+        #english {
+            position: absolute;
+            top: 0;
+            right: 0;
+            line-height: 75px;
+            color: White;
+            height: 100%;
+            padding: 0px 20px 0px 35px;
+            font-size: 30px;
+            border: 3px solid White;
+            border-style: solid solid none solid;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px; font-size: 18px}
+        }
+
+        @media screen and (max-width: 500px) {
+            #open {font-size: 30px; font-weight: 700}
+            #english {line-height: 40px; padding: 0px 15px; font-size: 15px}
+            address {font-size: 18px}
+        }
+
+		#images {
+		    text-align: center;
+		    max-width:  1000px;
+			margin: 40px auto 0px;
+			}
+
+		#flexbox0, #flexbox1 {
+		    display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+    		font-family: Verdana, Geneva, sans-serif;
+			font-size: 18px;
+			line-height: 1.5;
+			width: 85%;
+    		max-width: 500px;
+    		height: auto;
+    		background-color: White;
+    		margin: 40px auto 0px;
+    		padding: 0em 1em;
+			border: 2px solid Black;
+    	    border-radius: 20px;
+	    	}
+
+		#flexbox2 {
+    	    display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+    		align-items: center;
+    		width: 85%;
+    		max-width: 500px;
+    		min-height: 400px;
+    		margin: 80px auto 0px;
+    		padding: 0em 1em;
+    		-webkit-user-select: none;
+    		-webkit-touch-callout: none;
+    		-khtml-user-select: none;
+    		-moz-user-select: none;
+    		-ms-user-select: none;
+    		-o-user-select: none;
+    		user-select: none;
+			}
+
+		#plot {
+			font-family: Georgia, serif;
+			font-size: 20px;
+			color: Grey;
+			line-height: 1.5;
+			width: 100%;
+			max-width: 515px;
+    		min-height: 400px;
+    		background-color: White;
+    		padding: 1em;
+			border: 3px solid Black;
+    		border-radius: 30px;
+    		-webkit-user-select: none;
+    		-webkit-touch-callout: none;
+    		-khtml-user-select: none;
+    		-moz-user-select: none;
+    		-ms-user-select: none;
+    		-o-user-select: none;
+    		user-select: none;
+		    }
+
+        #plot:focus {
+            outline: none;
+        }
+
+        #button {
+            display: block;
+			min-width: 235px;
+			height: 75px;
+			margin: 5px 5px 20px 5px;
+			padding: 0em 0.8em;
+			font-size: 25px;
+			font-weight: bold;
+			text-align: center;
+			color: White;
+			background-color: SlateBlue;
+			border: 1px solid Black;
+			border-radius: 40px;
+			cursor: pointer;
+        }
+
+		#copybutton, #copyonlybutton, #savebutton {
+			display: block;
+			width: 235px;
+			height: 75px;
+			margin: 5px 5px 20px 5px;
+			padding: 0em 0.8em;
+			font-size: 25px;
+			font-weight: bold;
+			text-align: center;
+			color: White;
+			background-color: SlateBlue;
+			border: 1px solid Black;
+			border-radius: 40px;
+			cursor: pointer;
+		}
+
+		#share {
+		    display: block;
+		    width: auto;
+		}
+
+		#shareinput {
+		    width: 235px;
+		    height: 75px;
+		    margin: 5px 5px 20px 5px;
+			font-size: 25px;
+			font-weight: bold;
+			text-align: center;
+			color: White;
+			background-color: SlateBlue;
+			border: 1px solid Black;
+			border-radius: 40px;
+			cursor: pointer;
+		}
+
+		.buttonflex {
+		    width: auto;
+		    max-width: 500px;
+    		height: auto;
+    		margin: 20px auto 0px;
+		    display: flex;
+    		flex-direction: row;
+    		flex-wrap: wrap;
+    		justify-content: center;
+    		align-items: center;
+		}
+
+		#counterflex {
+    		display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+    		align-items: center;
+    		font-family: Verdana, Geneva, sans-serif;
+			font-size: 18px;
+			text-align: center;
+			line-height: 1.5;
+			width: 85%;
+    		max-width: 500px;
+    		height: auto;
+    		background-color: White;
+    	    margin: 40px auto 0px;
+    		padding: 0em 1em;
+			border: 2px solid Black;
+    		border-radius: 20px;
+			}
+
+		#facebookbox {
+    		display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+    		align-items: center;
+    		font-family: Verdana, Geneva, sans-serif;
+			font-size: 18px;
+			text-align: justify;
+			line-height: 1.5;
+			width: 85%;
+    		max-width: 500px;
+    		height: 100px;
+    		background-color: White;
+    	    margin: 80px auto 0px;
+    		padding: 0em 1em;
+			border: 2px solid Black;
+    		border-radius: 20px;
+			}
+
+		#flexbox3 {
+    		display: flex;
+    		flex-direction: column;
+    		font-family: Verdana, Geneva, sans-serif;
+			font-size: 18px;
+			text-align: justify;
+			line-height: 1.5;
+			width: 85%;
+    		max-width: 500px;
+    		height: auto;
+    		background-color: White;
+    	    margin: 40px auto 0px;
+    		padding: 0em 1em;
+			border: 2px solid Black;
+    		border-radius: 20px;
+			}
+
+		#flexbox4, #flexbox5, #flexbox6 {
+    	    display: flex;
+    		flex-direction: column;
+    		font-family: Verdana, Geneva, sans-serif;
+			font-size: 18px;
+			line-height: 1.5;
+			width: 85%;
+    		max-width: 500px;
+    		height: auto;
+    		background-color: White;
+    		margin: 40px auto 0px;
+    		padding: 0em 1em;
+			border: 2px solid Black;
+    		border-radius: 20px;
+			}
+
+        .margin-top-20px {
+            margin-top: 20px;
+        }
+
+        .margin-top-40px {
+            margin-top: 40px;
+        }
+
+		footer {
+		    display: block;
+		    width: 100vw;
+		    margin-top: 40px;
+		    background-color: Black;
+		}
+
+		address {
+		    display: block;
+		    font-style: normal;
+		    font-size: 30px;
+		    text-align: center;
+		    padding: 30px 0px;
+		}
+
+		footer address a {
+		    color: Silver;
+		}
+
+    </style>
+
+</head>
+
+<body onload="getLocalStorage()" onkeydown="pressC(event)">
+
+    <div id="openflexbox">
+        <p id="open" onClick="openNav()">&#9776;</p>
+        <a href="/en/" id="english">In English</a>
+    </div>
+
+    <div id="sidenav" class="sidenav">
+        <a class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/" class="path" style="margin-top: 30px">Etusivu</a>
+        <a href="/tarinat/" target="_blank" class="path" style="margin-top: 100px">Tarinat</a>
+    </div>
+
+	<div name="Images" id="images">
+	    <img src="https://www.juonigeneraattori.com/images/juoni.png" type="image" alt="Juoni-" style="width: 48.5%; height: 48.5%">
+		<img src="https://www.juonigeneraattori.com/images/generaattori.png" type="image" alt="generaattori" style="width: 100%; height: 100%">
+		<img src="https://www.juonigeneraattori.com/images/v2.png" type="image" alt="v2" style="width: 20%; height: 20%">
+	</div>
+
+    <div name="FlexBox0" id="flexbox0" lang="en">
+        <h2>Don't understand Finnish?</h2>
+        <p class="margin-top-20px">Is Finnish nonsense to you? Don't worry, <b>English version</b> of this generator is done! The link to it can be found <a href="https://www.juonigeneraattori.com/en/">here.</a> You can also change the language to English by clicking the top-right link.</p>
+        <h3>Yes, it's ready!</h3>
+        <p>Sorry for the long waiting. PG just studied enough English. The English version has now been released!</p>
+        <p><b>— Antti, developer of the Plot Generator v2</b></p>
+    </div>
+
+    <div name="FlexBox1" id="flexbox1">
+        <h1>Juonigeneraattori v2</h1>
+        <h2>Luo tarinaasi juonen</h2>
+		<p name="Info" id="info">Etkö millään keksi juonta tarinaasi? Ei hätää, <b>Juoni<wbr>&shy;generaattori v2 tekee sen puolestasi!</b> Juoni<wbr>&shy;generaattori v2 generoi täysin satunnaisesti 3-6 adjektiivia, päähenkilön ja sen kuvailun, tärkeän osan sekä pää<wbr>&shy;tapahtuma<wbr>&shy;paikankin. Voit käyttää generaattoria niin monta kertaa kuin haluat, kunnes löydät mieluisan juonen.</p>
+		<h3 class="margin-top-20px">Huomaa!</h3>
+	    <p>Tämä ei ole alku<wbr>&shy;peräinen Juoni<wbr>&shy;generaattori. Alku<wbr>&shy;peräisen Juoni<wbr>&shy;generaattorin löydät <a href="https://www.mikko.wtf/juonigeneraattori/" target="_blank">täältä.</a> Halusin kokeilla koodata oman Juoni<wbr>&shy;generaattorin, mutta silti saman<wbr>&shy;kaltaisen. Tämän takia generaattorin nimeen on lisätty <b>"v2".</b></p>
+	</div>
+
+	<div name="FlexBox2" id="flexbox2" onmousedown="return false" onselectstart="return false" unselectable="on" onClick="copyPlot()">
+		<textarea name="Plot" id="plot" readonly>Kun painat alla olevaa nappia, juonesi ilmestyy tähän...</textarea>
+	</div>
+
+	<div class="buttonflex">
+	    <input name="NewPlot" type="button" value="Luo juoni" id="button" onClick="generatePlot(document.Plot); changePlotColor(document.Plot); changeButtonValue(document.NewPlot); clickCounterNew(); shareInWhatsapp()">
+
+	    <input name="CopyPlot" type="button" value="Kopioi juoni" id="copybutton" onClick="copyPlot(document.CopyPlot); clickCounterCopy()">
+
+	    <input name="CopyOnly" type="hidden" value="Kopioi vain..." id="copyonlybutton" onClick=" copyOnlyPr(); clickCounterCopy()">
+
+        <input name="Save" type="button" value="Tallenna juoni" id="savebutton" onClick="setLocalStorage()">
+
+        <a id="share"><input type="text" id="shareinput" value="Jaa WhatsAppissa" readonly></a>
+    </div>
+
+    <div id="counterflex">
+       <p id="buttonclicks"></p>
+       <p id="copybuttonclicks"></p>
+    </div>
+
+    <div name="FacebookBox" id="facebookbox">
+        <a href="https://www.facebook.com/juonigeneraattoriv2/" style="font-size: 24px; text-align: center">Juonigeneraattori Facebookissa</a>
+        <!--<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v8.0" nonce="dXcuWRsZ"></script>
+        <div class="fb-like" data-href="https://www.juonigeneraattori.com" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>-->
+    </div>
+
+	<div name="FlexBox3" id="flexbox3">
+		<p name="ExtraInfo1" id="extrainfo1">Juonigeneraattori tuntee tällä hetkellä kaikkiaan:</p>
+		<ul><li><span id="numberofad123456">___</span> adjektiivia</li><li><span id="numberofpr">___</span> päähenkilöä</li><li><span id="numberofde">___</span> päähenkilön kuvausta</li><li><span id="numberofip">___</span> tärkeää osaa</li><li><span id="numberofpl">___</span> päätapahtumapaikkaa</li><li><span id="numberofbt">___</span> bonustehtävää <span style="color: Red">(UUSI!)</span></li></ul>
+		<p>Ja kaikkia yllä mainittuja tulee vaan lisää ja lisää!</p>
+		<p name="ExtraInfo2" class="margin-top-20px" id="extrainfo2">Erilaisia juonia on siis <span id="numberofall">__________</span> kappaletta.</p>
+	</div>
+
+	<div name="Flexbox4" id="flexbox4">
+	    <h2>Ehdota tarinan osia</h2>
+		<p name="SuggestWords" class="margin-top-20px" id="suggestwords">Haluaisitko, että keksimäsi tarinan osat lisättäisiin Juoni<wbr>&shy;generaattorin sana<wbr>&shy;varastoon? Jos haluat, ehdota niitä <a href="/ehdota/" target="_blank">täällä.</a><!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSftM7i_ZFRQZ4vkMptwk2GsOPgKFNgJybqJhExwP7WYBaxJOg/viewform?usp=sf_link" target="_blank">täällä.</a>--> Juoni<wbr>&shy;generaattori tykkää kovasti uusien sanojen opettelusta! <b>Voit ehdottaa niin monta sanaa ja niin monta kertaa kuin haluat.</b></p>
+		<h2 class="margin-top-20px">Raportoi tarinan osia</h2>
+		<p name="ReportWords" class="margin-top-20px" id="reportwords">Jos juoneesi generoitiin sana tai lause, joka ei sovi lapsille, raportoi siitä <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1Rgg71l_tt5MW-4z-Zu0ZlXBdi9fqqe6A29Aaujo8K3_XTA/viewform?usp=sf_link" target="_blank">täällä.</a> Yritetään pitää Juoni<wbr>&shy;generaattori lapsi<wbr>&shy;ystävällisenä! Voit raportoida niin monta kertaa kuin tarvitsee.</p>
+		<h2 class="margin-top-20px">Anna palautetta</h2>
+		<p name="Feedback" class="margin-top-20px" id="feedback">Haluaisitko antaa palautetta Juoni<wbr>&shy;generaattorista? <a href="mailto:antti@juonigeneraattori.com?subject=%50%61%6C%61%75%74%74%65%65%6E%69%20%4A%75%6F%6E%69%67%65%6E%65%72%61%61%74%74%6F%72%69%73%74%61" target="_blank">Lähetä sähkö<wbr>&shy;posti<wbr>&shy;viesti Juoni<wbr>&shy;generaattorin tekijälle tästä linkistä.</a></p>
+	</div>
+
+	<div name="Flexbox5" id="flexbox5">
+		<h2>Ehdotetut tarinan osat</h2>
+		<h3 class="margin-top-40px">Adjektiivit (40)</h3>
+		<p>Ammatillinen, apea, arvoituksellinen, arvokas, askarruttava, epäilyttävä, herras<wbr>&shy;miesmäinen, hikinen, hirveä, humiseva, innostunut, jonkin<wbr>&shy;lainen, kiitollinen, kireä, kuminen, kummallinen, loukkaantunut, maskuliininen, moni<wbr>&shy;puolinen, murtunut, nivel<wbr>&shy;jalkainen, outo, pikkutarkka, pistävä, pronssinen, punainen, ritarillinen, soseutettu, syntynyt, tuulinen, tärkeä, vahva, vanha, vegaaninen, verinen, vesi<wbr>&shy;liukoinen, voimakas, ystävällinen, älykäs, ärsyyntynyt</p>
+		<h3>Päähenkilöt (16)</h3>
+		<p>Ameeba, basisti, kalastaja, kitaristi, kyläläinen, laulaja, maan<wbr>&shy;viljelijä, mökkiläinen, naakka, nainen, pastori, puu<wbr>&shy;tarhuri, rumpali, suntio, tori<wbr>&shy;kauppias, undulaatti</p>
+		<h3>Päähenkilöiden kuvailut (8)</h3>
+		<p>Joka harrastaa mökkeilyä, joka harrastaa veneilyä, joka kasvattaa rotu<wbr>&shy;karjaa, joka on ahne, joka on kaikkien tuntema, joka ontuu, jolla on aina vihreät vaatteet, jolla on lehmä selässä</p>
+		<h3>Tärkeät osat (25)</h3>
+		<p>Alttaritaulu, brunssi, grilli, hanko, hyeena, joulu<wbr>&shy;torttu, kompassi, kori<wbr>&shy;pallo<wbr>&shy;teline, kyläläinen, käpy, käpy<wbr>&shy;tikka, lehmä, manner<wbr>&shy;laatta, myyrä, naapuri, nakki<wbr>&shy;kioskin pitäjä, persikka, peruna, poika, puiston<wbr>&shy;vartija, pöllö, silmin<wbr>&shy;näkijä, takka, vanhus, vene</p>
+		<h3>Tapahtumapaikat (20)</h3>
+		<p>Helsinki, Joutsenon nakki<wbr>&shy;kioski, kaislikko, kauppa<wbr>&shy;tori, Keski-Suomessa oleva järvi, kirkko, kirkon<wbr>&shy;kylä, maissi<wbr>&shy;pelto, mökki<wbr>&shy;ranta, pappila, peruna<wbr>&shy;maa, peruna<wbr>&shy;pelto, puisto, puu<wbr>&shy;vaja, risteily<wbr>&shy;alus, sammakko<wbr>&shy;lampi, sukellus<wbr>&shy;vene, tupa, vanhain<wbr>&shy;koti, vene<wbr>&shy;satama</p>
+	</div>
+
+    <div name="Flexbox6" id="flexbox6">
+        <h2>Lisää oma tarinasi</h2>
+        <p>Onko sinulla valmis tarina, jonka juoni on Juoni<wbr>&shy;generaattorin tekemä? Voit halutessasi lisätä sen <a href="https://www.juonigeneraattori.com/tarinat/" target="_blank">Juoni<wbr>&shy;generaattorin Tarina-sivulle.</a></p>
+    </div>
+
+    <footer>
+        <address>
+            <a href="mailto:antti@juonigeneraattori.com" target="_blank">Ota yhteyttä</a>
+        </address>
+    </footer>
+
+<script>
+
+	var Adjectives, ExtraWords, Protagonists, Describings, ImportantParts, Places, BonusTasks;
+
+	    Adjectives = ["100-vuotias", "14-vuotias", "200-vuotias", "aataminaikainen", "aavemainen", "addiktoitunut", "aerodynaaminen", "aggressiivinen", "ahdas", "ahmattimainen", "ahne", "aidattu", "aineeton", "ainoalaatuinen", "ainutlaatuinen", "aistiharhainen", "aito", "aivasteleva", "aivokuollut", "aivoton", "ajattelematon", "aktiivinen", "akustinen", "akuutti", "ala-arvoinen", "alaikäinen", "alennukseton", "alla mainittu", "alushousuton", "ambulatorinen", "ammatillinen", "ammottava", "analoginen", "anonyymi", "apea", "arka", "arkipäiväinen", "armoton", "arrogantti", "arvoituksellinen", "arvokas", "askarruttava", "aulis", "autio", "automaattinen", "avaruudellinen", "avattu", "banaanimainen", "brutaali", "cool", "digitaalinen", "diiva", "dokumentoimaton", "dorka", "dramaattinen", "dynaaminen", "edullinen", "eeppinen", "ehjä", "emäksinen", "ennalta arvattava", "ennätyksellinen", "epileptinen", "epäaito", "epäilyttävä", "epäonninen", "epäonnistunut", "epäsuotuisa", "epäsymmetrinen", "epävirallinen", "erisuuri", "erityisherkkä", "eronnut", "etukäteinen", "feikki", "fiktiivinen", "flegmaattinen", "fossiilinen", "fuksianpunainen", "geometrinen", "grillattu", "haihtuva", "haitallinen", "hajusteeton", "hallinnollinen", "halpa", "halpamainen", "halutunlainen", "hampaaton", "hampurilainen", "hapan", "harva", "harvahiuksinen", "haudattu", "hedelmäinen", "helpottunut", "helppo", "hengenvaarallinen", "heptatoninen", "herkullinen", "herrasmiesmäinen", "hevosvetoinen", "hiekkainen", "hienoksi hakattu", "hihaton", "hiiltynyt", "hikinen", "hirnuva", "hirveä", "homeinen", "housuton", "humiseva", "huojentunut", "huomiotaherättävä", "huonolaatuinen", "huumorintajuton", "hyvänmakuinen", "hyödyllinen", "hämärä", "härski", "ihku", "ikkunallinen", "ilmainen", "ilmatiivis", "innostunut", "itsekäs", "itselataava", "itsestäänselvä", "jalaton", "janoinen", "jaollinen", "jauhettu", "jauhomainen", "jokapäiväinen", "jonkinlainen", "jonninjoutava", "jouluinen", "jugurttipitoinen", "julkaisematon", "juoruileva", "jäinen", "järjetön", "jäätynyt", "jäätävä", "kahvitauoton", "kaksimielinen", "kaksiulotteinen", "kalainen", "kalju", "kalteva", "kamala", "kammottava", "karjalainen", "karkkilalainen", "karmea", "kasvava", "kasvispainotteinen", "katuviisas", "kaurainen", "kehno", "kekseliäs", "keraaminen", "kermainen", "keskivaikea", "kestävä", "kesy", "kettumainen", "keuhkoton", "kidukseton", "kielletty", "kiikkerä", "kiistanalainen", "kiitettävä", "kiitollinen", "kireä", "kirpeä", "kirveellä veistetty", "kisakireä", "kivenkova", "kivikautinen", "kivulias", "kloorattu", "kofeiiniton", "koleerinen", "kolkko", "konkurssikypsä", "korea", "korvallinen", "korvaton", "koskematon", "kostonhaluinen", "kotimainen", "kotitekoinen", "kova", "kranttu", "kreisi", "kriittinen", "kristitty", "kuiva", "kulmikas", "kuminen", "kummallinen", "kuninkaallinen", "kunnianhimoinen", "kunnon", "kuolemanvakava", "kuollut", "kuoreton", "kuorimaton", "kurainen", "kurja", "kuukausittainen", "kuultu", "kuuluisa", "kuuro", "kyllästynyt", "kymmenjalkainen", "kynnetön", "kyseenalainen", "kädetön", "käheä", "kärsivällinen", "käskevä", "kätevä", "käyrä", "kökkö", "kömpelö", "köyhä", "laadukas", "laho", "laiha", "laimea", "lainkuuliainen", "laiska", "laiton", "lajiteltu", "laktoositon", "lannistumaton", "lantainen", "lapsenmielinen", "lasinen", "lentokyvytön", "leppoisa", "leveä", "liejuinen", "liekehtivä", "lihaisa", "lihakseton", "lihaksikas", "lihaton", "liikkumaton", "liimattu", "liioitteleva", "likinäköinen", "limenvihreä", "linjaton", "lisäaineeton", "lisääntymiskyvytön", "littana", "litimärkä", "liukas", "looginen", "loputon", "loukkaantunut", "luettu", "luinen", "lukihäiriöinen", "lukutaidoton", "luminen", "luodinkestävä", "luonnollinen", "luova", "lupsakka", "luuton", "lyijyinen", "lystikäs", "lähteetön", "lälly", "lämpenemätön", "läpikuultava", "läpinäkyvä", "läski", "lörppänä", "löysä", "maaginen", "maailmanlaajuinen", "maanalainen", "maankuulu", "maanpuolustuksellinen", "macho", "magneettinen", "mahdollinen", "mahdoton", "mainio", "majesteettinen", "makkaramainen", "maksamaton", "mallikelpoinen", "mammuttimainen", "mandibulaarinen", "manuaalinen", "marinoitu", "marsilainen", "maskuliininen", "massiivinen", "maukas", "mehevä", "mehukas", "meikitön", "melankolinen", "meluisa", "menestyksekäs", "merenalainen", "merkittävä", "metabolinen", "metamorfinen", "metallinen", "metsäinen", "metsästämätön", "miehekäs", "miehittämätön", "mielikuvituksellinen", "miellyttävä", "mieto", "mietteliäs", "mikroskooppinen", "mitätön", "mitäänsanomaton", "moderni", "mondeeni", "monikielinen", "monimutkainen", "moninapainen", "moniosainen", "monipuolinen", "moniulotteinen", "monivärinen", "monotoninen", "moottoroitu", "moukkamainen", "muhkurainen", "muinainen", "muodikas", "muodoton", "muovinen", "muoviton", "murea", "murhanhimoinen", "murrettu", "murrosikäinen", "murteellinen", "murtunut", "musta", "mustasukkainen", "mutainen", "mutkainen", "muurattu", "muuttumaton", "mykkä", "myrkyllinen", "myrkytön", "myrskyinen", "mystinen", "myöhäinen", "myönteinen", "myötäpäiväinen", "myötätunnoton", "myötätuntoinen", "mädäntynyt", "mälsä", "märehtivä", "märkä", "mäsä", "mätä", "määrätietoinen", "määrätty", "mönjätön", "naarmuton", "nahkainen", "napakka", "naposteltava", "naurettava", "naurulainen", "nautamainen", "negatiivinen", "nelimoottorinen", "neliskanttinen", "nenäkäs", "nenätön", "nerokas", "nesteetön", "neutraali", "neuvoton", "nihkeä", "niin sanottu", "nimetön", "nirso", "niveljalkainen", "nokialainen", "nokinen", "nokkela", "nolo", "nopea", "norja", "normaali", "nostalginen", "notkea", "noudettu", "nuhaton", "nuhjuinen", "nukkuva", "numeroitu", "nuori", "nurinkurinen", "nuubialainen", "nykyaikainen", "näkymätön", "näkyvä", "näkökyvytön", "nälkäinen", "näppäimistötön", "näppärä", "näsäviisas", "nätti", "nöyrä", "obeesi", "ohikiitävä", "ohut", "oikaistu", "oikosulkuinen", "oikukas", "oireeton", "oksainen", "oksaton", "olemassa oleva", "olematon", "omituinen", "ongelmainen", "ontto", "ontuva", "optimistinen", "orgaaninen", "otettu", "orpo", "outo", "ovaali", "ovela", "ovellinen", "paha", "pahanmakuinen", "pahastuva", "pahvinen", "paidaton", "painajaismainen", "painoton", "paistettu", "pakastettu", "pakollinen", "paksu", "paksupäinen", "palanut", "paljas", "palkaton", "palkattu", "pantillinen", "paperinen", "paperiton", "papuauusiguinealainen", "paranematon", "paranormaali", "pareittainen", "parillinen", "pariton", "parrakas", "partikkelillinen", "pedanttinen", "pehmeä", "pehmeäpäinen", "peitetty", "pelkistetty", "pelokas", "peloton", "pelottava", "pennitön", "pensasmainen", "perheetön", "perinteinen", "persialainen", "persikkamainen", "perso", "perunamainen", "perus", "pessimistinen", "pesty", "pesunkestävä", "pidätetty", "pienituloinen", "pihi", "piikikäs", "piiritetty", "pikimusta", "pikkiriikkinen", "pikkutarkka", "pilaantunut", "pilkkopimeä", "pilkullinen", "pilvinen", "pimahtanut", "pimeä", "pinkki", "pirteä", "pistävä", "pistävänmakuinen", "pitkulainen", "pitkäkarvainen", "pitkäveteinen", "plusmerkkinen", "pohjallinen", "pohjaton", "pohjoiskorealainen", "poikamainen", "poikittainen", "poikkeuksellinen", "poissaoleva", "poksahtamaton", "poliittinen", "poljettava", "pomminvarma", "porsasmainen", "positiivinen", "posketon", "posliininen", "possunpunainen", "potentiaalinen", "pro", "pronssinen", "proteiiniton", "psykopaattinen", "psyykkinen", "puhdas", "puhdasrotuinen", "puhekielinen", "puhekyvytön", "puhelias", "puhtaanvalkoinen", "puinen", "punainen", "punnittu", "puolikas", "puolipilvinen", "puolueellinen", "puolueeton", "puolustusvoimaton", "pureva", "pussiton", "puuromainen", "puutteellinen", "pyhä", "pystysuora", "pystysuuntainen", "pyöreä", "päheä", "pähkähullu", "päihdeongelmainen", "päivitettävä", "päivittäinen", "päiväkoti-ikäinen", "pälli", "pätevä", "päättymätön", "päättäväinen", "päätön", "pöhkö", "pölyinen", "pöyhkeä", "pöyristyttävä", "qatarilainen", "raadollinen", "raajaton", "raaka", "raavas", "radikaalinen", "radioaktiivinen", "radioton", "rahanahne", "rahaton", "rahvaanomainen", "raihnainen", "raikas", "railakas", "raitis", "raivostuttava", "raivotautinen", "rajallinen", "rajaton", "raju", "rakennettu", "rakettimainen", "rankka", "rapea", "rasistinen", "rasittava", "raskaana oleva", "raskas", "rasvainen", "rasvaliukoinen", "rasvaton", "ratkaisematon", "raudaton", "rauhallinen", "raukkamainen", "rautainen", "rautakautinen", "ravistettu", "realistinen", "rehellinen", "rehevä", "rehti", "reikäinen", "reilu", "reipas", "rekisteröimätön", "rekisteröity", "renkaaton", "rento", "reseptivapaa", "retro", "riidanhaluinen", "riistanmakuinen", "riittämätön", "rikas", "rikkinäinen", "rikollinen", "rikottu", "riskialtis", "ristiriitainen", "ritarillinen", "robottimainen", "rodullinen", "romanttinen", "ronski", "roteva", "rottamainen", "rukiinen", "ruma", "runollinen", "runsas", "runsaskuituinen", "runsaslukuinen", "ruodoton", "ruokahaluton", "ruosteenruskea", "ruosteinen", "rupinen", "rutikuiva", "rutiköyhä", "ruudullinen", "ryhdikäs", "ryppyinen", "rähjäinen", "räikeä", "räjähdysaltis", "rättiväsynyt", "räväkkä", "rönsyilevä", "röyhkeä", "saappaaton", "saastunut", "saatavilla oleva", "sadistinen", "sahajauhoinen", "sahalaitainen", "sahamainen", "sairas", "saita", "sakarainen", "sakea", "salainen", "samanlainen", "samea", "sammaleinen", "sanaton", "sangollinen", "sangviininen", "sankka", "sanoinkuvailematon", "sanottu", "saranoitu", "sarkastinen", "sarvekas", "sateinen", "sattumanvarainen", "satulaton", "satunnainen", "savinen", "savuton", "sees", "seinällinen", "seinätön", "seisova", "seittimäinen", "sekoboltsi", "sekarotuinen", "sekoitettu", "selkeä", "selkärangaton", "selkärankainen", "selvittämätön", "semmoinen", "setämäinen", "sidottu", "sieluton", "sienimäinen", "sietämätön", "sievä", "siirretty", "siisti", "siivellinen", "siivetön", "siivoamaton", "sikamainen", "sileä", "sileäkarvainen", "silkkinen", "silmätön", "simppeli", "sinapiton", "sinnikäs", "sipulinen", "siro", "sisukseton", "sisäsiisti", "sisäänpäinkääntynyt", "sitkeä", "sivistynyt", "skottilainen", "smaragdinvihreä", "soikea", "soitettava", "sokea", "šokeeraava", "sokerinen", "sokeriton", "solmuton", "soma", "sopeutumaton", "sopimaton", "sormellinen", "sormeton", "soseutettu", "sosiaalinen", "sotaisa", "sotkuinen", "spiraalimainen", "stadilainen", "stereotyyppinen", "strateginen", "suippo", "sukaton", "sukkela", "suklaakuorrutettu", "sukukypsä", "sula", "suljettu", "sulkeutunut", "suloinen", "sumea", "summittainen", "sumuinen", "suojaton", "suolainen", "suomentamaton", "suomussalmelainen", "suomuton", "suora", "suosittu", "supermassiivinen", "supisuomalainen", "surkea", "suullinen", "suunnaton", "suunnittelematon", "suurehko", "suurisuinen", "suurituloinen", "suurustettu", "suuton", "suvaitsematon", "sydämellinen", "sydämetön", "symmetrinen", "synkkä", "synnillinen", "syntynyt", "syrjäytynyt", "sysimusta", "syvä", "syyllinen", "syytön", "syömäkelvoton", "syötävä", "sähköinen", "sähkömagneettinen", "sähkönsininen", "säikky", "säkkimusta", "säälittävä", "säästeliäs", "söötti", "tahallinen", "tahmea", "taidoton", "taikauskoinen", "taikinainen", "taipumaton", "tajuton", "takavetoinen", "takkuinen", "taktinen", "takuuvarma", "tallentumaton", "tanakka", "tappavan myrkyllinen", "tarkoitukseton", "tarpeeton", "tasa-arvoinen", "taukoamaton", "tauoton", "teatraalinen", "tehty", "tekijänoikeudellinen", "teknologinen", "telepaattinen", "televisioton", "teollinen", "teoreettinen", "teroittamaton", "tervattu", "terveellinen", "tervetullut", "terällinen", "terästetty", "teräväkulmainen", "tiedetty", "tiedonjanoinen", "tiedoton", "tieteellinen", "tietokoneeton", "tietön", "tiheähkö", "tiine", "tiivis", "tilapäinen", "tilastollinen", "tilattava", "tilava", "tislattu", "tiukka", "todenmukainen", "todennäköinen", "todistamaton", "toimimaton", "toipumaton", "toissapäiväinen", "toistuva", "toivoton", "tolkuton", "tosikko", "tottelematon", "tottunut", "traaginen", "traumaattinen", "transkendenttinen", "trendikäs", "trooppinen", "tuhoisa", "tuju", "tukkeutunut", "tulikuuma", "tulinen", "tulipunainen", "tulvimaton", "tumaton", "tunnelmallinen", "tunnistamaton", "tunnoton", "tuntematon", "tuoksuton", "tuomittu", "tuore", "tuottoisa", "tupakoiva", "turha", "turhanpäiväinen", "turhauttava", "turmelematon", "turvallinen", "tuulesta temmattu", "tuulinen", "tylsä", "tyly", "tynnyrillinen", "typerä", "typötyhjä", "tyrannimainen", "tyttömäinen", "tyydyttävä", "tyylikäs", "tyylitajuton", "tyypillinen", "tyyris", "työkyvytön", "työntyvä", "työtön", "tähtitieteellinen", "tällainen", "täpötäysi", "tärkeä", "tärkeähkö", "täsmällinen", "tätimäinen", "täydellinen", "täyteläinen", "törkeä", "töyhtöpäinen", "töykeä", "ubiikki", "uhanalainen", "uhattu", "uhkaava", "uhkaileva", "uhkarohkea", "uhmaikäinen", "uimataidoton", "ujo", "ujostelematon", "uljas", "ummikko", "umpimähkäinen", "umpinainen", "uneton", "uniikki", "universaalinen", "unohtumaton", "untuvainen", "uponnut", "upouusi", "uppopaistettu", "upporikas", "urbaani", "urhea", "urheilullinen", "urpo", "useanlainen", "uskalias", "uskollinen", "uskomaton", "usvainen", "utelias", "utooppinen", "uunituore", "uuno", "uupunut", "uusi", "uusittava", "uusiutumaton", "uusiutuva",  "vahva", "vaikea", "valmis", "valpas", "vanha", "varakas", "vegaaninen", "velvoittava", "venäläinen", "veriappelsiinimainen", "vertauskuvallinen", "vesiliukoinen", "viallinen", "viehättävä", "viereinen", "vihreä", "viivasuora", "vilkas", "villi", "voimakas", "vuorokautinen", "vähäinen", "vähäkuituinen", "värisokea", "väsymätön", "vääjäämätön", "väärinymmärretty", "väärä", "yhdistynyt", "yksinapainen", "yksinäinen", "ylivilkas", "yllä mainittu", "yllättynyt", "ymmärrettävä", "ystävällinen", "älykäs", "älytön", "ärsyttävä", "ärsyyntynyt", "ökyrikas"];
+
+        ExtraWords = ["ja ", "sekä ", "", "", "", ""];
+
+        Protagonists = ["ahmatti", "ameeba", "astrologi", "aviomies", "baseball-lyöjä", "basisti", "golfpallonsukeltaja", "jalkamies", "kaivosmies", "kakadu", "kalastaja", "kitaristi", "kulkuri", "kyläläinen", "käpytikka", "lapsenvahti", "laulaja", "lehmä", "lennonjohtaja", "liikemies", "maailmanmestari", "maallikko", "maantieteen professori", "maanviljelijä", "matkija", "meteorologi", "mies", "mökkiläinen", "naakka", "nainen", "nuorisojengin jäsen", "partiolainen", "pastori", "poikamies", "poliisi", "puutarhuri", "rastas", "rumpali", "selvännäkijä", "siniverinen", "suntio", "suutari", "tarjoilijatar", "torikauppias", "tosikko", "tulkki", "ummikko", "undulaatti", "vahtikoira", "vaimo", "vegaani", "yökyöpeli"];
+
+		Describings = ["joka ostaa lauantaisin 70 kappaletta samaa tavaraa (tavara, mitä hän ostaa, vaihtuu joka viikko)", "joka musiikkia kuunnellessaan laittaa aina nupit kaakkoon", "joka kaatuilee portaissa jokaisena viikonloppuna", "joka salaa aina jotain muilta", "joka iskee kultasuoneen", "joka tekee maailmanennätyksen", "joka tulee uimaan maailman ympäri 80 päivässä", "joka yrittää rakentaa teleportaalin", "joka yrittää valmistaa kultaa", "joka on kuin Hannu Hanhi", "joka juonii kaikenlaista muiden pään menoksi", "joka on mansikka-addikti", "joka on ahne", "joka ontuu", "joka harrastaa mökkeilyä", "joka harrastaa veneilyä", "joka kasvattaa rotukarjaa", "joka näkee enneunia", "joka on kaikkien tuntema", "joka puhuu vain omaa äidinkieltään", "joka tykkää nakeista", "jolla on valkoinen pupilli", "jolla on araknofobia", "jolla on maailman huonoin tuuri", "jolla on aina vihreät vaatteet", "jolla on vihamies", "joka on kuin Aku Ankka", "joka velkaantuu kaikille koko ajan", "jolla on huono itsetunto", "joka on perustanut makeisyrityksen", "jolla on lehmä selässä"];
+
+		ImportantParts = ["aave", "ahmatti", "alttaritaulu", "ansakuoppa", "astrologi", "auto", "aviomies", "banaani", "baseball-lyöjä", "brunssi", "currykastike", "dynamiitti", "grilli", "gulassi", "hampurilainen", "hanko", "hautaristi", "herätyskello", "hevosenlanta", "huppari", "hyeena", "ilmalaiva", "jalkamies", "jojo", "joulutorttu", "joulutähti", "jäänmurtaja", "kaivosmies", "kakadu", "kastelukannu", "kaurapuuro", "knalli", "koggi", "kompassi", "koripalloteline", "kyläläinen", "kylpytynnyri", "käpy", "käpytikka", "kääpä", "lapsenvahti", "lautasantenni", "lehmä", "leivinjauhe", "lennonjohtaja", "lettutaikina", "liharuoka-annos", "liikemies", "maallikko", "maantieteen professori", "mannerlaatta", "merikotka", "muistikortti", "myyrä", "naapuri", "nakkikioskin pitäjä", "nuorisojengin jäsen", "ovi", "pakastin", "partiolainen", "persikka", "peruna", "pikari", "pistorasia", "poika", "poikamies", "poliisi", "polkupyörä", "porsas", "puistonvartija", "päiväkirja", "päähine", "pöllö", "pölynimuri", "rantapallo", "ruokaresepti", "saha", "seinä", "selvännäkijä", "sentrifugi", "sika", "silminnäkijä", "suutari", "takka", "tarjoilijatar", "teekannu", "televisiokanava", "tilikirja", "timantti", "tosikko", "tyttö", "ummikko", "unihalvaus", "uppomuna", "vaakuna", "vadelmavene", "vahtikoira", "vaimo", "vanhus", "vaskitsa", "vegaani", "vene", "veriappelsiini", "väärennös", "yllätyslaatikko", "yökyöpeli"];
+
+		Places = ["ammattikoulu", "avaruus", "Bangkok", "eläintarha", "Hanko", "hautausmaa", "Helsinki", "Joutsenon nakkikioski", "kaislikko", "kauppahalli", "kauppatori", "Keski-Suomessa oleva järvi", "kirkko", "kirkonkylä", "linna", "lumilinna", "maissipelto", "Minsk", "mökkiranta", "pappila", "perunamaa", "perunapelto", "puisto", "puuvaja", "risteilyalus", "sammakkolampi", "sukellusvene", "tupa", "tyrmä", "vanhainkoti", "venesatama"];
+
+		BonusTasks = ["Kirjoita koko tarina yöllä", "Jokaisen sanan on alettava samalla kirjaimella", "Aloita tarina sanoilla “Olipa kerran”", "Kuvita jostakin tarinan tapahtumasta kuva", "Piirrä tarinaa varten kartta", "Sijoita tarina tulevaisuuteen", "Tarinan täytyy olla raapale (eli tasan 100-sanainen)", "Aina kun nautit jotain juomaa kirjoittamisen aikana, kirjoita joku tarinan henkilöistä tekemään samoin", "Kirjoita tarinalle surullinen loppu", "Sisällytä tarinaan kaksoset", "Sisällytä tarinaasi tunnettu satuhahmo", "Kirjoita tarina vain henkilöistä, jotka tunnet", "Kirjoita tarina minä-muodossa", "Sisällytä tarinaasi runo", "Kirjoita tarinallesi jatko-osa", "Sisällytä tarinaasi ensimmäinen aihe, joka tulee Wikipedian Satunnainen artikkeli-linkistä", "Käytä paljon tunneadjektiiveja", "Haasta myös kaverisi kirjoittamaan samasta aiheesta", "Käytä päähenkilöstä vähintään kahta eri nimeä", "Tarinassa pitää olla enemmän vokaaleja kuin konsonantteja", "Kuvaile päähenkilöitä sekä sivuhenkilöitä mahdollisimman tarkasti", "Tee jostakin tarinan henkilöstä kuuro tai sokea", "Lisää tarinaan oma itsesi", "Joka toisen sanan on alettava samalla kirjaimella", "Käytä sanontoja mahdollisimman paljon", "Sisällytä tarinaan identtiset kaksoset", "Juo pelkästään lempijuomaasi, kun teet tarinaa", "Kirjoita tarina hän-muodossa", "Sisällytä tarinaasi jokin uhanalainen eläin", "Käytä kliseitä mahdollisimman paljon", "Käytä mahdollisimman vähän adjektiiveja"];
+
+	var NumberOfAd123456 = Adjectives.length;
+	var NumberOfEW123 = ExtraWords.length;
+	var NumberOfPr = Protagonists.length;
+	var NumberOfDe = Describings.length;
+	var NumberOfIP = ImportantParts.length;
+	var NumberOfPl = Places.length;
+	var NumberOfBT = BonusTasks.length;
+
+	var NumberOfAll = NumberOfAd123456 * NumberOfPr * NumberOfDe * NumberOfIP * NumberOfPl * NumberOfBT;
+
+	var NumberOfAllSpace = NumberOfAll.toLocaleString('ru-RU');
+
+	var copyByPressingC = " (Kopioi juoni painamalla juonesta)";
+
+	function randGen() {
+		return Math.floor(Math.random() * 13);
+		}
+
+	function generatePlot() {
+		var Ad1 = Math.floor(Math.random() * NumberOfAd123456);
+		var Ad2 = Math.floor(Math.random() * NumberOfAd123456);
+		var Ad3 = Math.floor(Math.random() * NumberOfAd123456);
+		var Ad4 = Math.floor(Math.random() * NumberOfAd123456);
+		var Ad5 = Math.floor(Math.random() * NumberOfAd123456);
+		var Ad6 = Math.floor(Math.random() * NumberOfAd123456);
+		var EW1 = Math.floor(Math.random() * NumberOfEW123);
+		var EW2 = Math.floor(Math.random() * NumberOfEW123);
+		var EW3 = Math.floor(Math.random() * NumberOfEW123);
+		var Pr = Math.floor(Math.random() * NumberOfPr);
+		var De = Math.floor(Math.random() * NumberOfDe);
+		var IP = Math.floor(Math.random() * NumberOfIP);
+		var Pl = Math.floor(Math.random() * NumberOfPl);
+		var BT = Math.floor(Math.random() * NumberOfBT);
+
+		var ExtraAdjectives1;
+		var ExtraAdjectives2;
+		var ExtraAdjectives3;
+
+		if (EW1 <= 1) {
+			ExtraAdjectives1 = Adjectives[Ad4] + " ";
+			}
+		else {
+			ExtraAdjectives1 = "";
+			}
+
+		if (EW2 <= 1) {
+			ExtraAdjectives2 = Adjectives[Ad5] + " ";
+			}
+		else {
+			ExtraAdjectives2 = "";
+			}
+
+		if (EW3 <= 1) {
+			ExtraAdjectives3 = Adjectives[Ad6] + " ";
+			}
+		else {
+			ExtraAdjectives3 = "";
+			}
+
+		var Content = "Tarinan päähenkilö on " + Adjectives[Ad1] + " " + ExtraWords[EW1] + ExtraAdjectives1 + Protagonists[Pr] + ", " + Describings[De] + ". Tärkeässä osassa tarinaa on " + Adjectives[Ad2] + " " + ExtraWords[EW2] + ExtraAdjectives2 + ImportantParts[IP] + ". Päätapahtumapaikkana toimii " + Adjectives[Ad3] + " " + ExtraWords[EW3] + ExtraAdjectives3 + Places[Pl] + ". " + BonusTasks[BT] + "." + copyByPressingC;
+
+		document.getElementById('plot').value = Content;
+	}
+
+    document.getElementById('numberofad123456').innerHTML = NumberOfAd123456;
+
+    document.getElementById('numberofpr').innerHTML = NumberOfPr;
+
+    document.getElementById('numberofde').innerHTML = NumberOfDe;
+
+    document.getElementById('numberofip').innerHTML = NumberOfIP;
+
+    document.getElementById('numberofpl').innerHTML = NumberOfPl;
+
+    document.getElementById('numberofbt').innerHTML = NumberOfBT;
+
+    document.getElementById('numberofall').innerHTML = NumberOfAllSpace;
+
+	function changePlotColor() {
+		Plot = document.getElementById('plot');
+        Plot.style.color = "Black";
+        return false;
+        }
+
+	function changeButtonValue() {
+		GenerationButton = document.getElementById('button');
+		GenerationButton.value = "Luo uusi juoni";
+		return false;
+		}
+
+    function copyPlot() {
+        var Content2 = document.getElementById('plot').value;
+        copyText = document.getElementById('plot');
+        copyText.select();
+        copyText.setSelectionRange(0, Content2.length - copyByPressingC.length);
+        document.execCommand("copy");
+        alert("Juoni kopioitiin onnistuneesti!");
+        }
+
+    function pressC(event) {
+        var c = event.which || event.keyCode;
+        if (c == 67) {
+            copyPlot();
+            clickCounterCopy();
+        }
+    }
+
+    function shareInWhatsapp() {
+        var beginning = "https://api.whatsapp.com/send?text=";
+        var text1 = "*Juonigeneraattori%20v2*%20generoi%20%C3%A4sken%20minulle%20juonen%3A%0A%0A%E2%80%9C%E2%80%8A_";
+        var text2 = "_%E2%80%8A%E2%80%9D%0A%0AKokeile%20itsekin%20Juonigeneraattoria!%20%E2%86%92%20*https%3A%2F%2Fwww.juonigeneraattori.com*";
+        var plot = document.getElementById("plot").value;
+        var plotWithoutCopy = plot.substring(0, document.getElementById("plot").value.length - copyByPressingC.length);
+        var encodedPlot = encodeURIComponent(plotWithoutCopy);
+        document.getElementById("share").href = beginning + text1 + encodedPlot + text2;
+    }
+
+    function setLocalStorage() {
+        if (typeof(Storage) !== "undefined") {
+            localStorage.plot = document.getElementById("plot").value;
+            alert("Juoni tallennettiin onnistuneesti! Seuraavan kerran kun lataat Juonigeneraattorin uudelleen, tallentamasi juoni löytyy ylemmästä tekstikentästä. Se säilyy ja säilyy, kunnes tallennat toisen juonen.");
+		}
+    }
+
+    function getLocalStorage() {
+        if (localStorage.plot !== undefined) {
+            document.getElementById("plot").value = localStorage.getItem("plot");
+        }
+        else {
+            document.getElementById("plot").value = "Kun painat alla olevaa nappia, juonesi ilmestyy tähän...";
+        }
+
+        if (localStorage.clickcount !== undefined) {
+            document.getElementById("buttonclicks").innerHTML = "Olet generoinut Juonigeneraattorilla yhteensä <b>" + localStorage.clickcount + "</b> juonta.";
+        }
+
+        if (localStorage.clickcount2 !== undefined) {
+            document.getElementById("copybuttonclicks").innerHTML = "Olet kopioinut yhteensä <b>" + localStorage.clickcount2 + "</b> juonta.";
+        }
+    }
+
+</script>
+
+<script>
+
+    function openNav() {
+        document.getElementById("sidenav").style.width = "160px";
+    }
+
+    function closeNav() {
+        document.getElementById("sidenav").style.width = "0";
+    }
+
+</script>
+
+<script>
+
+    function clickCounterNew() {
+        if (typeof(Storage) !== "undefined") {
+            if (localStorage.clickcount) {
+                localStorage.clickcount = Number(localStorage.clickcount) + 1;
+            } else {
+                localStorage.clickcount = 1;
+            }
+            document.getElementById("buttonclicks").innerHTML = "Olet generoinut Juonigeneraattorilla yhteensä <b>" + localStorage.clickcount + "</b> juonta.";
+        } else {
+            document.getElementById("buttonclicks").innerHTML = "Juonien generointimäärää ei voi näyttää, koska valitettavasti selaimesi ei tue verkkotallennustilaa...";
+        }
+    }
+
+    function clickCounterCopy() {
+        if (typeof(Storage) !== "undefined") {
+            if (localStorage.clickcount2) {
+                localStorage.clickcount2 = Number(localStorage.clickcount2) + 1;
+            } else {
+                localStorage.clickcount2 = 1;
+            }
+            document.getElementById("copybuttonclicks").innerHTML = "Olet kopioinut yhteensä <b>" + localStorage.clickcount2 + "</b> juonta.";
+        }
+    }
+
+    function clearLocal() {
+        localStorage.removeItem('plot');
+    }
+
+</script>
+
+</body>
+
+<!--"joka öykkäröi ja öllöttää yöllä", "joka änkyttää ja äänestää ääneti äärimmäisyyden ääripäätä ämpärin ääressä", "joka on ytyä täynnä ja yöpyy Yyterissä käyttäen yömyssyä"-->
+
+</html>
